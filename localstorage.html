@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            
+        function  fnSetItem() {
+            var pname = "muthu";
+            var pemail = "muthu@gmail.com";
+            var pcity = "Bangalore";
+            var pphone = 9999999;
+
+            localStorage.setItem("name",pname);
+            localStorage.setItem("email",pemail);
+            localStorage.setItem("city",pcity);
+            localStorage.setItem("phone",pphone);
+
+        }  
+
+        function fnGetItem() {
+           var pname = localStorage.getItem("name");
+           var pemail = localStorage.getItem("email");
+           var pcity= localStorage.getItem("city");
+           var pphone = localStorage.getItem("phone");
+
+           var pnameref = document.getElementById("p1");
+           var pemailref = document.getElementById("p2");
+           var pcityref = document.getElementById("p3");
+           var pphoneref = document.getElementById("p4");
+
+          pnameref.innerText = pname;
+          pemailref.innerText = pemail;
+          pcityref.innerText = pcity;
+          pphoneref.innerText = pphone;
+
+        }
+
+        function fnUpdatetItem() {
+            localStorage.setItem("name","testupdate");
+            var pnameref = document.getElementById("p1");
+            pnameref.innerText = "testupdate";
+        }
+
+        function fnRemovetItem() {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("city");
+            localStorage.removeItem("phone");
+
+        }
+</script>
+</head>
+<body>
+    <div style="text-align: center;">
+        
+      <Button onclick="fnSetItem()">SetItem</Button>
+      <Button onclick="fnGetItem()">GetItem</Button>
+      <Button onclick="fnUpdatetItem()">UpdateItem</Button>
+      <Button onclick="fnRemovetItem()">RemovetItem</Button>
+
+      <div style="text-align: center;">
+            <p id="p1"></p> 
+            <p id="p2"></p>
+            <p id="p3"></p>
+            <p id="p4"></p>      
+      </div>
+    </div>
+</body>
+</html>
