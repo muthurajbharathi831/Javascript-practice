@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function userForm(e){
+            
+            
+            var unameref = document.getElementById("name");
+            var ageref = document.getElementById("age");
+            var cityref = document.getElementById("city");
+            var phoneref = document.getElementById("phone");
+
+            var uname = unameref.value;
+            var age = ageref.value;
+            var city = cityref.value;
+            var phone = phoneref.value;
+
+            loadTable(uname,age,city,phone);
+           
+            e.preventDefault();
+        }
+
+        function loadTable(u,a,c,p){
+            var usertable = document.getElementById("userdetails");
+            var tr = document.createElement('tr');
+
+
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var sheet = document.createElement('style')
+            sheet.innerHTML = "td {text-align:center; border: 2px solid black; background-color: blue;}";
+            document.body.appendChild(sheet);
+
+            //td1.style("text-align:center");
+            var text1 = document.createTextNode(u);
+            var text2 = document.createTextNode(a);
+            var text3 = document.createTextNode(c);
+            var text4 = document.createTextNode(p);
+
+            td1.appendChild(text1);
+            td2.appendChild(text2);
+            td3.appendChild(text3);
+            td4.appendChild(text4);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            
+            usertable.appendChild(tr);
+            document.body.appendChild(usertable);
+
+            /*document.getElementsByTagName('td').setAttribute(
+   "style", "font-size: 5px; font-style: italic; color:#ff0000;");
+          */  
+         }
+    </script>
+</head>
+<body>
+    <div style = "text-align:center">
+        <form onsubmit="userForm(event)"> 
+            <label for="username">Username</label>
+            <input type = "text" name = "username" id= "name" value = ""><br/>
+            <br/>
+            <label for="age">Age</label>
+            <input type = "number" name = "userage" id= "age" value = ""><br/><br/>
+            <label for="city">City</label>
+            <input type = "text" name = "usercity" id= "city" value = ""><br/><br/>
+            <label for="phone">Phone</label>
+            <input type = "number" name = "userphone" id= "phone" value = ""><br/><br/>
+            <input type="submit">
+
+        </form>
+    </div>
+    <div style = "text-align:center">
+        <table id = "userdetails"  style="width:100%;border: 1px solid black">
+            <tr>
+              <th style="width:25%">Name</th>
+              <th style="width:25%" >Age</th>
+              <th style="width:25%" >City</th>
+              <th style="width:25%" >Phone</th>
+            </tr>
+            
+          </table>
+    </div>
+</body>
+</html>
