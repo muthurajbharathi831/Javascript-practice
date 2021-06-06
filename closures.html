@@ -1,0 +1,38 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type = "text/javascript">
+    //Closures
+    //For security
+    //scenario : for example if we do not want a global variable being accessed in multiple function and alter the value, secure its functionaly inside an another function
+    //A function inside an another function
+        function fnOut(){
+
+            var i = 0;
+
+            return function fnIn(){
+                i = i + 1;
+                console.log(i);
+
+            }
+        }
+
+        function fnOut2(){
+            i = 5; 
+            console.log("fnOut2 i val "+ i);
+        }
+
+        var closureRef = fnOut();
+    </script>
+</head>
+<body>
+    <div style = "text-align:center">
+        <button onclick = " closureRef() ">closure</button>
+        <button onclick = " fnOut2() ">Normal</button>
+    </div>
+</body>
+</html>
