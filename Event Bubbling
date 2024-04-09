@@ -1,0 +1,35 @@
+Event Bubbling
+
+https://www.freecodecamp.org/news/event-bubbling-in-javascript/
+
+Document
+  Html
+    head
+      body
+        div
+          span
+            button
+
+const button = document.getElementsbyTagName('button')[0]
+const span = document.getElementsbyTagName('span')[0]
+const div = document.getElementsbyTagName('div')[0]
+const body = document.getElementsbyTagName('body')[0]
+
+
+button.addEventListener('click',()=>{
+  console.log("button Clicked');
+})
+
+span.addEventListener('click',()=>{
+  console.log("span Clicked');
+})
+div.addEventListener('click',()=>{
+  console.log("div Clicked');
+})
+
+body.addEventListener('click',()=>{
+  console.log("body Clicked');
+})
+
+
+
