@@ -1,0 +1,29 @@
+https://www.freecodecamp.org/news/copying-stuff-in-javascript-how-to-differentiate-between-deep-and-shallow-copies-b6d8c1ef09cd/
+Deep means Real copy even in composite data types 
+  Arrays, Objects, number, string, boolean, undefined, null
+    
+const a = {
+  en: 'Bye',
+  de: 'Tschüss'
+}
+let b = Object.assign({}, a)
+b.de = 'Ciao'
+console.log(b.de) // Ciao
+console.log(a.de) // Tschüss
+
+/////
+  spread  
+
+  let b = {...a}
+
+const a = {
+  en: 'Bye',
+  de: 'Tschüss'
+}
+let b = {...a}
+b.de = 'Ciao'
+console.log(b.de) // Ciao
+console.log(a.de) // Tschüss
+
+
+let c= {...a,...b}
